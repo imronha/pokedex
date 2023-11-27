@@ -48,9 +48,13 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Pokedex</h1>
         <div className='poke-card'>
-          {pokemons.map((pokemon) => {
+          {pokemons.map((pokemon, index) => {
             return (
-              <h2>{pokemon.name}</h2>
+              <div>
+                <h2>#{index+1} {pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)} </h2>
+                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index+1}.svg`} width="100" height="100"></img>
+              </div>
+
             )
           })}
         </div>
